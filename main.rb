@@ -1,7 +1,9 @@
 require_relative 'lib/game'
 require_relative 'lib/console_interface'
+require 'colorize'
+require 'colorized_string'
 
-game = Game.new('thriller')
+game = Game.new
 console_interface = ConsoleInterface.new(game)
 
 until game.finished?

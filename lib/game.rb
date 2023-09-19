@@ -3,7 +3,7 @@ class Game
 
   attr_reader :word, :right_letters, :wrong_letters
 
-  def initialize(word)
+  def initialize
     @word = get_the_word_from_txt
     @right_letters = []
     @wrong_letters = []

@@ -1,3 +1,6 @@
+require 'colorize'
+require 'colorized_string'
+
 class ConsoleInterface
   HANGMAN_PIC = Dir[__dir__ + '/../data/figures/*.txt'].map { |pic| File.read(pic, chomp: true)}
   
@@ -8,9 +11,9 @@ class ConsoleInterface
 
   def print_results
     <<~RESULTS
-      Слово: #{print_word}
-      #{HANGMAN_PIC[@game.errors_number]}
-      Ошибки (#{@game.errors_number}): #{wrong_letters_to_show}
+      #{"Слово: #{print_word}".colorize(:light_blue)}
+      #{HANGMAN_PIC[@game.errors_number].colorize(:yellow)}
+      #{"Ошибки (#{@game.errors_number}): #{wrong_letters_to_show}".colorize(:red)}
       Ошибок осталось: #{@game.errors_left}
 
     RESULTS
